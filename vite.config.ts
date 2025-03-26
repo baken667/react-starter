@@ -13,6 +13,33 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      workbox: {
+        globPatterns: ['**/*.{html,css,js,ico,png,svg}'],
+      },
+      manifest: {
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        icons: [
+          {
+            purpose: 'maskable',
+            sizes: '512x512',
+            src: '/icon512_maskable.png',
+            type: 'image/png',
+          },
+          {
+            purpose: 'any',
+            sizes: '512x512',
+            src: '/icon512_rounded.png',
+            type: 'image/png',
+          },
+        ],
+        orientation: 'any',
+        display: 'standalone',
+        lang: 'ru-RU',
+        name: 'React Starter',
+        short_name: 'React Starter',
+        start_url: '/',
+      },
     }),
   ],
   resolve: {
