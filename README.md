@@ -4,3 +4,4 @@
 - eslint + prettier
 - husky + lint-staged
 - react-router
+- zustand

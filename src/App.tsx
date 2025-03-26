@@ -1,12 +1,19 @@
 import { Route, Routes } from 'react-router';
-import { lazy } from 'react';
 
-const HomePage = lazy(() => import('./pages/home'));
+import { HomePage } from './features/home/pages';
+import { HomeLayout } from './features/home/layouts';
+import { AuthLayout } from './features/auth/layouts';
+import { LoginPage } from './features/auth/pages';
 
 function Router() {
   return (
     <Routes>
-      <Route index element={<HomePage />} />
+      <Route element={<HomeLayout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+      <Route element={<AuthLayout />}>
+        <Route path="/login" element={<LoginPage />} />
+      </Route>
     </Routes>
   );
 }
